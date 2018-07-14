@@ -4,13 +4,14 @@
   "keywords": [
     "back to top",
     "scroll to top",
-    "top", "scrollTop"
+    "top",
+    "scrollTop"
   ],
   "repository": "https://github.com/tramyardg/back2topjs",
   "author": "Raymart De Guzman <raymart54@gmail.com>",
   "private": false,
   "scripts": {
-    "eslint": "eslint js/back2topModule.js"
+    "eslint": "eslint js/back2top.js"
   },
   "dependencies": {
     "jquery": "^3.3.1"
