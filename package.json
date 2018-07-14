@@ -4,7 +4,7 @@
   "keywords": [
     "back to top",
     "scroll to top",
-    "top"
+    "top", "scrollTop"
   ],
   "repository": "https://github.com/tramyardg/back2topjs",
   "author": "Raymart De Guzman <raymart54@gmail.com>",
