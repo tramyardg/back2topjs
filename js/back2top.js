@@ -51,6 +51,6 @@ const Back2Top = {
     Back2Top.topFunction();
   }
 };
-$(document).ready(function () {
+(function () {
   Back2Top.run();
-});
+})();
