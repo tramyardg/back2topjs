@@ -8,26 +8,94 @@
 
     <title>Back to top</title>
 
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/grid.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="css/grid.css" rel="stylesheet"/>
+    <link href="css/shCore.css" rel="stylesheet" type="text/css"/>
+    <link href="css/shThemeDefault.css" rel="stylesheet" type="text/css"/>
+
 </head>
 <body>
+
 <div class="container">
 
     <h1>Back to top</h1>
     <p class="lead">Built with JavaScript, Bootstrap, and jQuery</p>
+    <p><a href="demo.html">Demo</a></p>
+    <h3>Basic Step</h3>
+    <p>To get Back2Top to work include the following scripts in order:</p>
+    <ol>
+        <li><code>jQuery</code></li>
+        <li><code>back2top.js</code></li>
+    </ol>
+    <h3>Components</h3>
 
-    <h3>Usage</h3>
-    <script src="https://gist.github.com/tramyardg/5b93058487d69157f1bff92f0fd52672.js"></script>
+    <h4>back2top.js</h4>
+    <pre class="brush:js">
+    const Back2Top = {
+      id: null,
+      createBtn () {
+        let btn = document.createElement('button');
+        let btnId = 'back2topBtn';
+        let btnTxt = document.createTextNode('Top');
 
-    <button id="back2topBtn" class="btn btn-primary" title="Go to top">Top</button>
+        btn.appendChild(btnTxt);
+        btn.setAttribute('title', 'Go to top');
+        btn.setAttribute('class', 'btn btn-primary');
+        btn.setAttribute('id', btnId);
+        document.body.appendChild(btn);
 
+        Back2Top.setBtnId(btnId);
+        Back2Top.stylize();
+      },
+      setBtnId (btnId) {
+        Back2Top.id = $('#' + btnId)[0];
+      },
+      stylize () {
+        Back2Top.id.style.display = 'none';
+        Back2Top.id.style.position = 'fixed';
+        Back2Top.id.style.bottom = '20px';
+        Back2Top.id.style.right = '30px';
+        Back2Top.id.style.zIndex = '99';
+        Back2Top.id.style.fontSize = '18px';
+        Back2Top.id.style.color = 'white';
+        Back2Top.id.style.cursor = 'pointer';
+        Back2Top.id.style.padding = '15px';
+        Back2Top.id.style.borderRadius = '4px';
+      },
+      scrollFunction () {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          Back2Top.id.style.display = 'block';
+        } else {
+          Back2Top.id.style.display = 'none';
+        }
+      },
+      topFunction () {
+        $(Back2Top.id).click(function (e) {
+          $('html, body').animate({scrollTop: 0}, 600);
+          e.preventDefault();
+          return false;
+        });
+      },
+      run () {
+        Back2Top.createBtn();
+        window.onscroll = function () {
+          Back2Top.scrollFunction();
+        };
+        Back2Top.topFunction();
+      }
+    };
+    $(document).ready(function () {
+      Back2Top.run();
+    });
+    </pre>
 </div>
 
 <script src="js/jquery.v3.2.1.js"></script>
-<script src="js/back2top.js"></script>
-<script src="js/main.js"></script>
-
+<script src="js/shCore.js"></script>
+<script src="js/shBrushJScript.js"></script>
+<script type="text/javascript">
+  SyntaxHighlighter.all()
+</script>
 
 </body>
 </html>
