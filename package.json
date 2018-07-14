@@ -1,0 +1,26 @@
+{
+  "name": "back2topjs",
+  "version": "0.0.1",
+  "keywords": [
+    "back to top",
+    "scroll to top",
+    "top"
+  ],
+  "repository": "https://github.com/tramyardg/back2topjs",
+  "author": "Raymart De Guzman <raymart54@gmail.com>",
+  "private": false,
+  "scripts": {
+    "eslint": "eslint js/back2top.js, js/main.js"
+  },
+  "dependencies": {
+    "jquery": "^3.3.1"
+  },
+  "devDependencies": {
+    "eslint": "^4.19.1",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-node": "^6.0.1",
+    "eslint-plugin-promise": "^3.7.0",
+    "eslint-plugin-standard": "^3.0.1"
+  }
+}
